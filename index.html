@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSE Academy: Git & GitHub Basics</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="#hero">Home</a>
+        <a href="#what-are">What Are Git & GitHub?</a>
+        <a href="#tutorial">Tutorial</a>
+        <a href="#terms">Key Terms</a>
+        <a href="#commands">Commands</a>
+        <a href="#contributors">Contributors</a>
+    </nav>
+
+    <section id="hero" class="hero">
+        <h1>TSE Academy: Git & GitHub Basics</h1>
+        <p class="objective">By the end of this lesson, teammates will be able to:</p>
+        <ul class="objectives-list">
+            <li>Clone a GitHub repository</li>
+            <li>Create and switch to a new branch</li>
+            <li>Make a small contribution to a Markdown file</li>
+            <li>Stage, commit, and push changes</li>
+            <li>Open a pull request (PR) on GitHub</li>
+        </ul>
+        <a href="#tutorial" class="btn">Start the Lesson</a>
+    </section>
+
+    <section id="materials" class="materials">
+        <h2>🗂️ Materials Needed</h2>
+        <ul>
+            <li>A GitHub account</li>
+            <li>Git installed on your computer (<a href="https://coda.io/d/Engineering-Wiki_duvlW1VbQXK/Setting-GitHub-SSH-Key_suExA4-V#_luIxGxjo" target="_blank">setup guide</a>)</li>
+            <li>A code editor like VS Code</li>
+            <li>Terminal access (Command Prompt, Git Bash, etc.)</li>
+            <li>This repository: <a href="https://github.com/davidfemi/tse_academy" target="_blank">https://github.com/davidfemi/tse_academy</a></li>
+        </ul>
+    </section>
+
+    <section id="what-are" class="what-are">
+        <h2>What Are Git and GitHub?</h2>
+        <div class="two-columns">
+            <div class="column">
+                <h3>Git</h3>
+                <p>Git is a tool that helps people keep track of changes in files—especially when working on a project with others. Think of it like a detailed history or "undo" button for your code. You can use Git to see what changed, who changed it, and when. It also makes it easy to test new ideas without messing up the main version of your project.</p>
+            </div>
+            <div class="column">
+                <h3>GitHub</h3>
+                <p>GitHub is a website that lets you store your Git-tracked project online, so you and your team can collaborate from anywhere. It keeps everyone's work in sync and provides tools to review and discuss changes before they go live.</p>
+            </div>
+        </div>
+        <div class="together">
+            <h3>How do they work together?</h3>
+            <p>Together, Git and GitHub let you:</p>
+            <ul>
+                <li>Make edits confidently, knowing you can always go back</li>
+                <li>Work in parallel with others without stepping on each other's toes</li>
+                <li>Share your project with collaborators (or the world)</li>
+                <li>Review and merge contributions in a structured way</li>
+            </ul>
+            <p>In this tutorial, we'll learn how to use Git and GitHub to make a small contribution to a shared project—just like professional developers do.</p>
+        </div>
+    </section>
+
+    <section id="tutorial" class="tutorial">
+        <h2>Hands-On Tutorial</h2>
+        
+        <div class="step">
+            <h3>Step 1: Clone the Repository</h3>
+            <ol>
+                <li>Visit: <a href="https://github.com/davidfemi/tse_academy" target="_blank">https://github.com/davidfemi/tse_academy</a></li>
+                <li>Click the <code>&lt; &gt;</code> Code button</li>
+                <li>Copy the HTTPS link</li>
+            </ol>
+            <p>Now, open your terminal and type the following commands:</p>
+            <pre><code>cd Desktop
+git clone https://github.com/davidfemi/tse_academy.git</code></pre>
+        </div>
+
+        <div class="step">
+            <h3>Step 2: Navigate Into the Project Folder</h3>
+            <p>List files to confirm the project is there:</p>
+            <pre><code>ls</code></pre>
+            <p>Move into the project folder:</p>
+            <pre><code>cd tse_academy</code></pre>
+        </div>
+
+        <div class="step">
+            <h3>Step 3: Create Your Branch</h3>
+            <p>Run this command, replacing the branch name with your own initials and a short description:</p>
+            <pre><code>git checkout -b 'fo/add_fun_fact'</code></pre>
+        </div>
+
+        <div class="step">
+            <h3>Step 4: Make Your Change</h3>
+            <ol>
+                <li>Open the project folder in your file explorer or VS Code</li>
+                <li>Open the CONTRIBUTORS.md file</li>
+                <li>Add fun fact sentence where your name is:</li>
+            </ol>
+            <pre><code># Our Awesome Contributors
+- [Your Name] fun fact</code></pre>
+        </div>
+
+        <div class="step">
+            <h3>Step 5: Stage and Commit Your Change</h3>
+            <p>Check what's changed:</p>
+            <pre><code>git status</code></pre>
+            <p>Stage the file:</p>
+            <pre><code>git add .</code></pre>
+            <p>Commit your change with a message:</p>
+            <pre><code>git commit -m "Added [Your Name]'s fun fact to the list"</code></pre>
+        </div>
+
+        <div class="step">
+            <h3>Step 6: Push Your Branch to GitHub</h3>
+            <p>Push your branch up to GitHub:</p>
+            <pre><code>git push -u origin 'fo/add_fun_fact'</code></pre>
+            <p>✅ This connects your local branch to GitHub.</p>
+        </div>
+
+        <div class="step">
+            <h3>Step 7: Open a Pull Request (PR)</h3>
+            <ol>
+                <li>Go to the GitHub repo in your browser</li>
+                <li>Look for the yellow banner and click "Compare & pull request"</li>
+                <li>If not visible, click the Pull Requests tab → New pull request</li>
+                <li>Confirm the title (auto-filled with your commit message)</li>
+                <li>Leave a message in the description (e.g., "I've added my name to the list.")</li>
+                <li>Click Create pull request</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="terms" class="terms">
+        <h2>Key GitHub Terms</h2>
+        <dl>
+            <dt>Repository (Repo)</dt>
+            <dd>A folder for your project on GitHub. It stores your files, history of changes, and allows others to collaborate.</dd>
+
+            <dt>Remote Repository</dt>
+            <dd>The version of your project that lives online (e.g., on GitHub). It's the source of truth that your team shares and updates.</dd>
+
+            <dt>Clone</dt>
+            <dd>Copying a GitHub project from the remote repo to your own computer, so you can work on it locally.</dd>
+
+            <dt>Terminal (or Command Line)</dt>
+            <dd>A text-based way to tell your computer what to do—like opening folders, copying files, or running Git commands.</dd>
+
+            <dt>Branch</dt>
+            <dd>A separate version of the project where you can make your changes without affecting the main version (usually called main or master).</dd>
+
+            <dt>Checkout</dt>
+            <dd>Switching to a different branch, or creating a new one to work on.</dd>
+
+            <dt>Markdown (.md file)</dt>
+            <dd>A simple text file that uses symbols (like # or -) to format text. GitHub uses it for documentation.</dd>
+
+            <dt>Stage</dt>
+            <dd>Telling Git which files you're preparing to commit (save). Think of it like selecting items before checking out at a store.</dd>
+
+            <dt>Commit</dt>
+            <dd>Saving your changes with a short message describing what you did. Each commit is like a snapshot of your work.</dd>
+
+            <dt>Push</dt>
+            <dd>Uploading your commits from your computer to the remote repo on GitHub.</dd>
+
+            <dt>Origin</dt>
+            <dd>The name Git uses to refer to the original remote repo you cloned from.</dd>
+
+            <dt>Pull Request (PR)</dt>
+            <dd>A way to ask for your changes to be added to the main project. Others can review and approve before merging your work.</dd>
+
+            <dt>Merge</dt>
+            <dd>Combining your branch into the main version of the project.</dd>
+        </dl>
+    </section>
+
+    <section id="commands" class="commands">
+        <h2>Key Git Commands Cheat Sheet</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Command</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>git status</code></td>
+                    <td>A command to check what files you've changed, and whether they're staged, committed, or need attention.</td>
+                </tr>
+                <tr>
+                    <td><code>git add .</code></td>
+                    <td>Stages all the changed files in the project so you can commit them.</td>
+                </tr>
+                <tr>
+                    <td><code>git commit -m "message"</code></td>
+                    <td>Commits the staged files with a message explaining the change (keep it short and clear).</td>
+                </tr>
+                <tr>
+                    <td><code>git push -u origin your-branch-name</code></td>
+                    <td>Sends your branch and commits to GitHub, making your work visible to others.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="contributors" class="contributors">
+        <h2>Our Awesome Contributors</h2>
+        <p class="contributors-intro">These amazing people have completed the tutorial and added their fun facts!</p>
+        <div class="contributors-grid">
+            <div class="contributor-card">
+                <div class="contributor-avatar">👤</div>
+                <div class="contributor-info">
+                    <h3>Your Name</h3>
+                    <p class="contributor-fact">Your fun fact goes here!</p>
+                </div>
+            </div>
+            <!-- Add more contributor cards here as people complete the tutorial -->
+        </div>
+        <div class="contributors-cta">
+            <p>Want to join this list? Follow the tutorial above and add yourself!</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>TSE Academy - Git & GitHub Basics</p>
+    </footer>
+</body>
+</html>
+
